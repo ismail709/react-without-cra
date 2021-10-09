@@ -7,14 +7,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-          title: 'New React App',
+          template: 'public/index.html'
         }),
     ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname,'build')
     },
-    modules:{
+    module:{
         rules: [
             {
                 test: /\.css$/i,
@@ -30,7 +30,7 @@ module.exports = {
                 use: {
                   loader: 'babel-loader',
                   options: {
-                    presets: ['@babel/preset-env']
+                    presets: ['@babel/preset-env',"@babel/preset-react"]
                   }
                 }
             }
